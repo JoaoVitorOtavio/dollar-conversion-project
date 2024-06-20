@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+
 import backgroundMoneyImage from "../assets/MaskSVG.svg";
 
 const GlobalStyles = createGlobalStyle` html,
@@ -6,6 +7,10 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f6f6f0;
+}
+
+header {
+  background-color: transparent;
 }
 
 .moneyImageBackground {
@@ -17,13 +22,20 @@ body {
 
   background-color: transparent;
 
-  height: 100vh;
-  width: 100%;
+  height: 1020px;
+  width: 1440px;
 
   background-image: url(${backgroundMoneyImage});
-  background-size: contain;
-  background-position: right;
+  background-size: inherit;
+  background-position: right bottom;
   background-repeat: no-repeat;
+}
+
+.graphImage{
+  display: block;
+  position: relative;
+  top: 239px;
+  left: 854px;
 }
 
 
@@ -37,6 +49,21 @@ a {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   box-sizing: border-box;
+}
+
+@media (min-height: 1021px) {
+  .moneyImageBackground{
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .graphImage{
+    display: none;
+  }
 }
 
 
