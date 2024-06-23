@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NumericFormat } from "react-number-format";
 
 export const BoldTypography = styled.b`
   color: #2e3742;
@@ -90,7 +91,7 @@ export const FormInputContainer = styled.div`
   flex-direction: column;
 `;
 
-export const FormInput = styled.input`
+export const FormInput = styled(NumericFormat)`
   margin-right: 24px;
   border: 1px solid #d6e0ea;
   padding: 10px;
@@ -125,6 +126,15 @@ export const Button = styled.button`
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
+
+  &.active {
+    &:hover {
+      filter: contrast(85%);
+    }
+
+    background-color: #00ab63;
+    cursor: pointer;
+  }
 `;
 
 export const ButtonLabel = styled.span`

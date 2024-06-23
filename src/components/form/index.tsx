@@ -44,22 +44,49 @@ const Form = () => {
   const {
     dolValue,
     setDolValue,
-    stateTax,
-    setStateTax,
+    stateTaxValue,
+    setStateTaxValue,
     handleCheckboxChange,
     selectedCheckbox,
+    handleInputValueChange,
+    handleDisabledButton,
   } = useForm();
+
   return (
     <FormContainer>
       <FormContentContainer>
         <InputContentContainer>
           <FormInputContainer>
             <BoldTypography>Dólar</BoldTypography>
-            <FormInput value={dolValue} />
+            <FormInput
+              isAllowed={(values) => {
+                const floatValue = values.floatValue ?? 1;
+                return floatValue >= 1;
+              }}
+              id="dolValueInput"
+              value={dolValue}
+              onValueChange={(e) => handleInputValueChange(e, setDolValue)}
+              prefix="$ "
+              thousandSeparator=","
+              decimalSeparator="."
+              decimalScale={2}
+            />
           </FormInputContainer>
           <FormInputContainer>
             <BoldTypography>Taxa do estado</BoldTypography>
-            <FormInput value={stateTax} />
+            <FormInput
+              isAllowed={(values) => {
+                const floatValue = values.floatValue ?? 0;
+                return floatValue >= 0 && floatValue <= 100;
+              }}
+              placeholder="0%"
+              id="stateTaxValueInput"
+              value={stateTaxValue}
+              onValueChange={(e) => handleInputValueChange(e, setStateTaxValue)}
+              suffix="%"
+              decimalSeparator="."
+              decimalScale={2}
+            />
           </FormInputContainer>
         </InputContentContainer>
         <div>
@@ -67,18 +94,22 @@ const Form = () => {
           <CheckboxContentContainer>
             <RoundCheckbox
               label="Dinheiro"
-              checked={selectedCheckbox === "checkbox1"}
-              onChange={() => handleCheckboxChange("checkbox1")}
+              checked={selectedCheckbox === "dinheiro"}
+              onChange={() => handleCheckboxChange("dinheiro")}
             />
             <RoundCheckbox
               label="Cartão"
-              checked={selectedCheckbox === "checkbox2"}
-              onChange={() => handleCheckboxChange("checkbox2")}
+              checked={selectedCheckbox === "cartao"}
+              onChange={() => handleCheckboxChange("cartao")}
             />
           </CheckboxContentContainer>
         </div>
         <div>
-          <Button>
+          <Button
+            onClick={() => console.log("CLICOU")}
+            disabled={handleDisabledButton()}
+            className={!handleDisabledButton() ? "active" : ""}
+          >
             <ButtonLabel>
               <FaArrowRightArrowLeft />
               &nbsp; Converter

@@ -1,22 +1,46 @@
 import { useState } from "react";
+import { NumberFormatValues } from "react-number-format";
 
 export const useForm = () => {
-  const [stateTax, setStateTax] = useState("0%");
-  const [dolValue, setDolValue] = useState("$ 1,00");
+  const [stateTaxValue, setStateTaxValue] = useState<number | undefined>(
+    undefined
+  );
+  const [dolValue, setDolValue] = useState<number | undefined>(1);
   const [selectedCheckbox, setSelectedCheckbox] = useState<string | null>(
-    "checkbox1"
+    "dinheiro"
   );
 
   const handleCheckboxChange = (id: string) => {
     setSelectedCheckbox(id);
   };
 
+  const handleInputValueChange = (
+    values: NumberFormatValues,
+    stateToSet: React.Dispatch<React.SetStateAction<number | undefined>>
+  ) => {
+    const { floatValue } = values;
+    stateToSet(floatValue || 1);
+  };
+
+  const handleDisabledButton = (): boolean => {
+    if (dolValue === undefined || stateTaxValue === undefined) return true;
+
+    const dolValueIsValid = dolValue >= 0;
+    const stateTaxIsValid = stateTaxValue >= 0;
+
+    if (dolValueIsValid && stateTaxIsValid) return false;
+
+    return true;
+  };
+
   return {
-    stateTax,
-    setStateTax,
+    stateTaxValue,
+    setStateTaxValue,
     dolValue,
     setDolValue,
     handleCheckboxChange,
     selectedCheckbox,
+    handleInputValueChange,
+    handleDisabledButton,
   };
 };
