@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const BoldTypograph = styled.b`
+export const BoldTypography = styled.b`
   color: #45505E;
   font-size: 18px;
   font-weight: 500;
