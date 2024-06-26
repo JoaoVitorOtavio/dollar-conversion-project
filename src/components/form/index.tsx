@@ -42,14 +42,15 @@ const RoundCheckbox: React.FC<RoundCheckboxProps> = ({
 
 const Form = () => {
   const {
-    dolValue,
-    setDolValue,
     stateTaxValue,
     setStateTaxValue,
     handleCheckboxChange,
     selectedCheckbox,
     handleInputValueChange,
     handleDisabledButton,
+    dolQty,
+    setDolQty,
+    convertUsdToBrl,
   } = useForm();
 
   return (
@@ -64,8 +65,8 @@ const Form = () => {
                 return floatValue >= 1;
               }}
               id="dolValueInput"
-              value={dolValue}
-              onValueChange={(e) => handleInputValueChange(e, setDolValue)}
+              value={dolQty}
+              onValueChange={(e) => handleInputValueChange(e, setDolQty)}
               prefix="$ "
               thousandSeparator=","
               decimalSeparator="."
@@ -106,7 +107,7 @@ const Form = () => {
         </div>
         <div>
           <Button
-            onClick={() => console.log("CLICOU")}
+            onClick={() => convertUsdToBrl()}
             disabled={handleDisabledButton()}
             className={!handleDisabledButton() ? "active" : ""}
           >
