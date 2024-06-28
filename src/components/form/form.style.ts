@@ -8,69 +8,6 @@ export const BoldTypography = styled.b`
   line-height: 21px;
 `;
 
-export const ContainerCheckbox = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const CheckboxLabel = styled.p`
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 450;
-`;
-
-export const CheckboxContainer = styled.div`
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0 8px;
-`;
-
-export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
-  border: 0;
-  clip: rect(0 0 0 0);
-  clippath: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-`;
-
-interface StyledCheckboxProps {
-  checked: boolean;
-}
-
-export const StyledCheckbox = styled.label<StyledCheckboxProps>`
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid ${(props) => (props.checked ? "#4caf50" : "#ccc")};
-  background-color: white;
-  position: relative;
-  cursor: pointer;
-  transition: all 150ms;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 13px;
-    height: 13px;
-    background-color: ${(props) => (props.checked ? "#4caf50" : "white")};
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 150ms;
-  }
-
-  ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 3px pink;
-  }
-`;
-
 export const FormContainer = styled.div`
   max-width: 500px;
 `;
@@ -115,7 +52,7 @@ export const CheckboxContentContainer = styled.div`
   padding-bottom: 15px;
 `;
 
-export const Button = styled.button`
+export const ConvertButton = styled.button`
   width: 149px;
   height: 56px;
   border-radius: 8px;
@@ -137,8 +74,70 @@ export const Button = styled.button`
   }
 `;
 
-export const ButtonLabel = styled.span`
+export const ConvertButtonLabel = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const BackButton = styled.button`
+  cursor: pointer;
+  border: 1px solid #d7e0eb;
+  padding: 16px;
+  outline: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 4px #ececed;
+  width: 120px;
+  height: 56px;
+  margin-bottom: 32px;
+
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #2e3742;
+
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const ResultTitle = styled.span`
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+  color: #45505e;
+  margin-bottom: 8px;
+`;
+
+export const ResultValue = styled.span`
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 80px;
+  color: #00ab63;
+`;
+
+export const ResultInfosDescriptionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+`;
+
+export const ResultInfoDescriptionValues = styled.span`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #6e7e90;
+`;
+
+export const ResultInfoDescription = styled.span`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #6e7e90;
 `;
