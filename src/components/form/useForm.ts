@@ -24,6 +24,7 @@ export const useForm = () => {
     undefined
   );
 
+  const [isResult, setIsResult] = useState<boolean>(false);
   const handleCheckboxChange = (id: string) => {
     setSelectedCheckbox(id);
   };
@@ -47,7 +48,9 @@ export const useForm = () => {
     return true;
   };
 
-  const convertUsdToBrl = (): number => {
+  const convertUsdToBrl = (
+    stateIsConverted: React.Dispatch<React.SetStateAction<boolean>>
+  ): number => {
     if (!dolQty || !stateTaxValue || !usdExchangeValue) return 0;
 
     const IOF_MONEY = 0.011;
@@ -56,7 +59,19 @@ export const useForm = () => {
     if (selectedCheckbox === "dinheiro") {
       const convertedResult =
         (dolQty + dolQty * (stateTaxValue / 100)) *
-        (usdExchangeValue + dolQty * IOF_MONEY);
+        (usdExchangeValue * (1 + IOF_MONEY));
+
+      stateIsConverted(true);
+
+      localStorage.setItem(
+        "convertedResult",
+        JSON.stringify({
+          convertedValue: convertedResult,
+          usdExchangeValue,
+          stateTaxValue,
+          selectedCheckbox,
+        })
+      );
 
       return convertedResult;
     }
@@ -64,6 +79,18 @@ export const useForm = () => {
     const convertedResult =
       (dolQty + dolQty * (stateTaxValue / 100) + dolQty * IOF_CARD) *
       usdExchangeValue;
+
+    localStorage.setItem(
+      "convertedResult",
+      JSON.stringify({
+        convertedValue: convertedResult,
+        usdExchangeValue,
+        stateTaxValue,
+        selectedCheckbox,
+      })
+    );
+
+    stateIsConverted(true);
 
     return convertedResult;
   };
@@ -78,5 +105,7 @@ export const useForm = () => {
     handleInputValueChange,
     handleDisabledButton,
     convertUsdToBrl,
+    isResult,
+    setIsResult,
   };
 };
