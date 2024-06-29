@@ -1,15 +1,16 @@
 import Header from "./components/header";
 import Form from "./components/form";
 import graphImage from "../src/assets/Graph.png";
+import { MoneyImageBackground, GraphImage } from "./styles/global";
 
 function App() {
   return (
     <>
       <Header />
       <Form />
-      <div className="moneyImageBackground">
-        <img className="graphImage" src={graphImage} />
-      </div>
+      <MoneyImageBackground>
+        <GraphImage src={graphImage} />
+      </MoneyImageBackground>
     </>
   );
 }
