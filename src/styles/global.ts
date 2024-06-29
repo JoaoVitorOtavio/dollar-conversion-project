@@ -14,6 +14,7 @@ header {
 }
 
 .moneyImageBackground {
+  pointer-events: none; 
   position: absolute;
   top: 0;
   right: 0;
