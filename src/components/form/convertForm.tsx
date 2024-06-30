@@ -11,6 +11,7 @@ import {
   CheckboxContentContainer,
   ConvertButtonLabel,
   ConvertButton,
+  CheckboxContainer,
 } from "./form.style";
 import { useForm } from "./useForm";
 
@@ -37,6 +38,7 @@ const ConvertForm: React.FC<ConvertFormProps> = ({ stateIsConverted }) => {
         <FormInputContainer>
           <BoldTypography>Dólar</BoldTypography>
           <FormInput
+            className="input-margin_bottom"
             isAllowed={(values) => {
               const floatValue = values.floatValue ?? 1;
               return floatValue >= 1;
@@ -67,7 +69,7 @@ const ConvertForm: React.FC<ConvertFormProps> = ({ stateIsConverted }) => {
           />
         </FormInputContainer>
       </InputContentContainer>
-      <div>
+      <CheckboxContainer>
         <BoldTypography>Tipo de compra</BoldTypography>
         <CheckboxContentContainer>
           <RoundCheckbox
@@ -81,7 +83,7 @@ const ConvertForm: React.FC<ConvertFormProps> = ({ stateIsConverted }) => {
             onChange={() => handleCheckboxChange("cartao")}
           />
         </CheckboxContentContainer>
-      </div>
+      </CheckboxContainer>
       <div>
         <ConvertButton
           onClick={() => convertUsdToBrl(stateIsConverted)}

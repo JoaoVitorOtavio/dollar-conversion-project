@@ -6,6 +6,7 @@ import {
   ResultInfosDescriptionContainer,
   ResultInfoDescriptionValues,
   ResultInfoDescription,
+  ResultInfoContainer,
 } from "./form.style";
 import { FaArrowLeft } from "react-icons/fa6";
 
@@ -51,12 +52,12 @@ const ResultForm: React.FC<ResultFormProps> = ({ stateToConvert }) => {
             &nbsp;{stateTaxValue}%
           </ResultInfoDescriptionValues>
         </div>
-        <div>
+        <ResultInfoContainer>
           <ResultInfoDescription>Cotação do dólar:</ResultInfoDescription>
           <ResultInfoDescriptionValues>
             &nbsp;$1,00 = R$ {usdExchangeValue.toFixed(2)}
           </ResultInfoDescriptionValues>
-        </div>
+        </ResultInfoContainer>
       </ResultInfosDescriptionContainer>
     </FormContentContainer>
   );

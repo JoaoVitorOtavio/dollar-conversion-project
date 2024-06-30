@@ -28,6 +28,10 @@ export const MoneyImageBackground = styled.div`
     margin: 0;
     padding: 0;
   }
+
+  @media (max-width: 1006px) {
+    z-index: -1;
+  }
 `;
 
 export const GraphImage = styled.img`
@@ -38,6 +42,19 @@ export const GraphImage = styled.img`
 
   @media (min-height: 1021px) {
     display: none;
+  }
+`;
+
+export const ContentContainer = styled.div`
+  @media (max-width: 1006px) {
+    padding: 0 0 50px 0;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `;
 

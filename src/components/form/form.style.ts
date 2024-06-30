@@ -10,22 +10,46 @@ export const BoldTypography = styled.b`
 
 export const FormContainer = styled.div`
   max-width: 500px;
+
+  @media (max-width: 805px) {
+    max-width: none;
+    width: 100%;
+  }
 `;
 
 export const FormContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 105px 0 0 64px;
+
+  @media (max-width: 805px) {
+    align-items: center;
+    margin: 50px 0 25px 0;
+  }
 `;
 
 export const InputContentContainer = styled.div`
   display: flex;
   margin-bottom: 32px;
+
+  @media (max-width: 805px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
 `;
 
 export const FormInputContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 805px) {
+    align-items: center;
+  }
 `;
 
 export const FormInput = styled(NumericFormat)`
@@ -44,12 +68,35 @@ export const FormInput = styled(NumericFormat)`
   line-height: 24px;
   font-weight: 400;
   color: #2e3742;
+
+  @media (max-width: 805px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 550px) {
+    width: 60%;
+    &.input-margin_bottom {
+      margin-bottom: 50px;
+    }
+  }
+`;
+
+export const CheckboxContainer = styled.div`
+  @media (max-width: 805px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const CheckboxContentContainer = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 15px;
+
+  @media (max-width: 805px) {
+    flex-direction: column;
+  }
 `;
 
 export const ConvertButton = styled.button`
@@ -113,6 +160,10 @@ export const ResultTitle = styled.span`
   font-weight: 600;
   color: #45505e;
   margin-bottom: 8px;
+
+  @media (max-width: 555px) {
+    text-align: center;
+  }
 `;
 
 export const ResultValue = styled.span`
@@ -120,13 +171,29 @@ export const ResultValue = styled.span`
   font-weight: 600;
   line-height: 80px;
   color: #00ab63;
+
+  @media (max-width: 555px) {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 40px;
+  }
 `;
 
 export const ResultInfosDescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 32px;
+
+  @media (max-width: 805px) {
+    text-align: center;
+    margin-top: 10px;
+  }
 `;
+
+export const ResultInfoContainer = styled.div``;
 
 export const ResultInfoDescriptionValues = styled.span`
   font-size: 14px;
