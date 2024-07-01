@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <a href="google.com">
+      <a>
         <img src={logo} alt="logo" />
       </a>
       <DateAndDescriptionContainer>
