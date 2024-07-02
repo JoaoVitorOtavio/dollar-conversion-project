@@ -18,6 +18,7 @@ Esta aplicação foi desenvolvida para estudo e como portfólio profissional, ba
 - Styled Components
 - Axios
 - Vite
+- Typescript
 
 ## Pré-requisitos
 - Node.js
