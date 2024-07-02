@@ -25,7 +25,7 @@ Esta aplicação foi desenvolvida para estudo e como portfólio profissional, ba
 
 ## Instalação
 1. Clone o repositório:
-   ``` git clone https://github.com/seu-usuario/seu-repositorio.git ```
+   ``` git clone https://github.com/JoaoVitorOtavio/dollar-conversion-project.git ```
 
 2. Navegue até o diretório do projeto:
    ``` cd seu-repositorio ```
