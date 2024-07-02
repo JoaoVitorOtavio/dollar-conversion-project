@@ -8,6 +8,7 @@ Este projeto é uma aplicação que converte valores em dólares para reais, con
 
 ## Propósito
 Esta aplicação foi desenvolvida para estudo e como portfólio profissional, baseada em um template de desafio encontrado na web:
+
 [Desafio Web Template](https://github.com/stone-payments/template-desafio-web?tab=readme-ov-file)
 
 ## Tecnologias Utilizadas
