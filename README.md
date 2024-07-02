@@ -28,7 +28,7 @@ Esta aplicação foi desenvolvida para estudo e como portfólio profissional, ba
    ``` git clone https://github.com/JoaoVitorOtavio/dollar-conversion-project.git ```
 
 2. Navegue até o diretório do projeto:
-   ``` cd seu-repositorio ```
+   ``` cd dollar-conversion-project ```
 
 3. Instale as dependências:
    ``` yarn ```
