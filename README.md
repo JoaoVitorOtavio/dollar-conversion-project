@@ -39,5 +39,5 @@ Para iniciar o projeto, execute:
 ``` yarn dev ```
 Depois, acesse a URL exibida no terminal (geralmente http://localhost:5173/).
 
-### Possíveis Melhorias
+## Possíveis Melhorias
 Adição de testes automatizados: Para garantir a qualidade e a confiabilidade do código. Ferramentas como Jest e React Testing Library podem ser utilizadas para esse fim.
