@@ -55,6 +55,7 @@ export const ContentContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: 20px;
   }
 `;
 
@@ -81,7 +82,10 @@ a {
   font-style: normal;
   box-sizing: border-box;
 }
-
+@media (min-height: 832px) {
+   /* TODO: Subir na vercel ( esta na descricao do desafio) */
+  .moneyImageBackground{}
+}
 `;
 
 export default GlobalStyles;
